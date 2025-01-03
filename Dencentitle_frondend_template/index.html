@@ -34,6 +34,62 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    /* Dynamic text styles */
+    .text-container {
+      position: relative;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .original-text {
+      font-size: 36px;
+      font-weight: bold;
+      color: #2563eb;
+      transition: opacity 1s;
+    }
+
+    .split-text {
+      position: absolute;
+      font-size: 36px;
+      font-weight: bold;
+      opacity: 0;
+      transition: all 1s;
+    }
+
+    .decentralized {
+      color: #7c3aed;
+    }
+
+    .decent {
+      color: #059669;
+    }
+
+    .title {
+      color: #dc2626;
+    }
+
+    .split .original-text {
+      opacity: 0;
+    }
+
+    .split .split-text.decentralized {
+      opacity: 1;
+      transform: translateX(calc(-50% - 300px));
+    }
+
+    .split .split-text.decent {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+
+    .split .split-text.title {
+      opacity: 1;
+      transform: translateX(calc(-50% + 300px));
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -90,9 +146,11 @@
 
       <div class="container">
         <div class="row justify-content-center" data-aos="zoom-out">
-          <div class="col-lg-10 col-lg-9 text-center">
-            <h1>Decentralized Decent Title </h1>
-            <p>Your First WEB3 Workforce DID</p>
+          <div class="text-container">
+            <div class="original-text">decentitle</div>
+            <div class="split-text decentralized">decentralized</div>
+            <div class="split-text decent">decent</div>
+            <div class="split-text title">title</div>
           </div>
         </div>
         <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
@@ -1041,7 +1099,15 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function toggleSplit() {
+      const container = document.querySelector('.text-container');
+      container.classList.toggle('split');
+    }
 
+    // Set up infinite toggle
+    setInterval(toggleSplit, 2000);
+  </script>
 </body>
 
 </html>
