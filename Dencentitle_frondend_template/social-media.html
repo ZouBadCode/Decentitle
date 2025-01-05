@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Social</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E6F7FF; /* 淡天空藍背景 */
+        }
+
+        .header {
+            background-color: #80D0FF; /* 天空藍 */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .main {
+            flex: 3;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-form {
+            margin-bottom: 20px;
+        }
+
+        .post-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #B3E5FF;
+            border-radius: 5px;
+            resize: none;
+            font-size: 16px;
+        }
+
+        .post-form input {
+            display: block;
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+        .post-form button {
+            background-color: #80D0FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .post-form button:hover {
+            background-color: #4FB0E5;
+        }
+
+        .post {
+            background-color: #F0FAFF;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post .author {
+            font-weight: bold;
+            color: #0077B6;
+        }
+
+        .post .content {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .post img {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+            color: #0077B6;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #F0FAFF;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #B3E5FF;
+            border-radius: 5px;
+        }
+
+        .actions {
+            margin-top: 20px;
+        }
+
+        .actions button {
+            background-color: #80D0FF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .actions button:hover {
+            background-color: #4FB0E5;
+        }
+        #searchbar{
+            position: relative;
+            top:10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Decentitle
+        <div class="search-bar">
+            <input type="text" id="searchbar" placeholder="Search...">
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="main">
+            <div class="post-form">
+                <textarea id="postContent" rows="4" placeholder="What's on your mind?"></textarea>
+                <input type="file" id="postImage">
+                <button onclick="addPost()">Post</button>
+            </div>
+            <div id="posts">
+                <div class="post">
+                    <div class="author">Alice</div>
+                    <div class="content">Just enjoying the beautiful sky today!</div>
+                    <img src="https://via.placeholder.com/300x150" alt="Sky">
+                    <div class="post-actions">
+                        <button class="like-btn" onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
+                        <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="author">Bob</div>
+                    <div class="content">Had a great day with friends!</div>
+                    <img src="https://via.placeholder.com/300x150" alt="Friends">
+                    <div class="post-actions">
+                        <button class="like-btn" onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
+                        <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="actions">
+                <button>Add Friend</button>
+                <button>Message</button>
+                <button>Notifications</button>
+            </div>
+            <h3>Contacts</h3>
+            <ul>
+                <li>Charlie</li>
+                <li>David</li>
+                <li>Eve</li>
+                <li>Grace</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function addPost() {
+            const postContent = document.getElementById('postContent').value.trim();
+            const postImage = document.getElementById('postImage').files[0];
+    
+            if (postContent === '' && !postImage) {
+                alert('Please write something or select an image before posting!');
+                return;
+            }
+    
+            const postsContainer = document.getElementById('posts');
+    
+            const postElement = document.createElement('div');
+            postElement.className = 'post';
+    
+            const authorElement = `<div class="author">User</div>`;
+            const contentElement = postContent ? `<div class="content">${postContent}</div>` : '';
+            const actionsElement = `
+                <div class="post-actions">
+                    <button class="like-btn" onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
+                    <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+                </div>
+            `;
+    
+            let imageElement = '';
+            if (postImage) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imageElement = `<img src="${e.target.result}" alt="Uploaded Image">`;
+                    postElement.innerHTML = authorElement + contentElement + imageElement + actionsElement;
+                    postsContainer.insertBefore(postElement, postsContainer.firstChild);
+                };
+                reader.readAsDataURL(postImage);
+            } else {
+                postElement.innerHTML = authorElement + contentElement + actionsElement;
+                postsContainer.insertBefore(postElement, postsContainer.firstChild);
+            }
+    
+            document.getElementById('postContent').value = '';
+            document.getElementById('postImage').value = '';
+        }
+    
+        function likePost(button) {
+            const likeCount = button.querySelector('.like-count');
+            likeCount.textContent = parseInt(likeCount.textContent) + 1;
+        }
+    
+        function sharePost() {
+            alert('Post shared!');
+        }
+    </script>
+</body>
+</html>
