@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #b3e5fc);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .dashboard {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 95%;
+      max-width: 1200px;
+      padding: 30px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 20px;
+    }
+
+    .avatar-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      background-color: #87cefa;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .avatar:hover {
+      transform: scale(1.1);
+    }
+
+    .info {
+      text-align: left;
+    }
+
+    .name {
+      font-size: 2rem;
+      color: #333333;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      color: #777777;
+      font-weight: 500;
+    }
+
+    .balance-section {
+      display: flex;
+      gap: 20px;
+    }
+
+    .balance-card,
+    .loan-card {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      padding: 20px 25px;
+      border-radius: 15px;
+      text-align: center;
+      width: 160px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .balance-card:hover,
+    .loan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .balance-card h3,
+    .loan-card h3 {
+      font-size: 1.3rem;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    .balance-card p,
+    .loan-card p {
+      font-size: 1.5rem;
+      color: #007bb5;
+      font-weight: bold;
+    }
+
+    .details {
+      margin-top: 30px;
+    }
+
+    .details-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid #e0e0e0;
+      transition: background 0.3s;
+    }
+
+    .details-row:hover {
+      background: #f7f7f7;
+    }
+
+    .details-row span {
+      font-size: 1.2rem;
+      color: #333333;
+    }
+
+    .credit-score {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .credit-score h3 {
+      font-size: 1.8rem;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    .credit-score p {
+      font-size: 1.5rem;
+      color: #007bb5;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RWD */
+    @media (max-width: 768px) {
+      .dashboard {
+        padding: 20px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .balance-section {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .balance-card,
+      .loan-card {
+        width: 45%;
+      }
+
+      .details-row span {
+        font-size: 1rem;
+      }
+
+      .credit-score h3 {
+        font-size: 1.5rem;
+      }
+
+      .credit-score p {
+        font-size: 1.2rem;
+      }
+    }
+
+    #avatarimg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="header">
+      <div class="avatar-section">
+        <div class="avatar">
+          <img id="avatarimg" src="assets/img/NEWA.png" alt="User Avatar">
+        </div>
+        <div class="info">
+          <h2 class="name">Name</h2>
+          <p class="role">Role</p>
+        </div>
+      </div>
+      <div class="balance-section">
+        <div class="balance-card">
+          <h3>Balance</h3>
+          <p>$0.00</p>
+        </div>
+        <div class="loan-card">
+          <h3>Loan</h3>
+          <p>$0.00</p>
+        </div>
+      </div>
+    </div>
+    <div class="details">
+      <div class="details-row">
+        <span>Transaction</span>
+        <span class="value">0</span>
+      </div>
+      <div class="details-row">
+        <span>Breach of Contract</span>
+        <span class="value">0</span>
+      </div>
+      <div class="details-row">
+        <span>Average Balance</span>
+        <span class="value">$0.00</span>
+      </div>
+      <div class="details-row">
+        <span>Leverage</span>
+        <span class="value">0%</span>
+      </div>
+      <div class="credit-score">
+        <h3>Credit Score</h3>
+        <p>0 ~ 999</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const exampleData = {
+      name: "John Doe",
+      role: "Account Manager",
+      balance: 1500.75,
+      loan: 300.00,
+      transaction: 15,
+      breach: 0,
+      avgBalance: 1250.50,
+      leverage: 25,
+      creditScore: 720
+    };
+
+    document.querySelector('.name').textContent = exampleData.name;
+    document.querySelector('.role').textContent = exampleData.role;
+    document.querySelector('.balance-card p').textContent = `$${exampleData.balance.toFixed(2)}`;
+    document.querySelector('.loan-card p').textContent = `$${exampleData.loan.toFixed(2)}`;
+    document.querySelectorAll('.details-row .value')[0].textContent = exampleData.transaction;
+    document.querySelectorAll('.details-row .value')[1].textContent = exampleData.breach;
+    document.querySelectorAll('.details-row .value')[2].textContent = `$${exampleData.avgBalance.toFixed(2)}`;
+    document.querySelectorAll('.details-row .value')[3].textContent = `${exampleData.leverage}%`;
+    document.querySelector('.credit-score p').textContent = `${exampleData.creditScore}`;
+  </script>
+</body>
+</html>
