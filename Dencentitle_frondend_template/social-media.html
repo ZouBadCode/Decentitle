@@ -3,260 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Social</title>
+    <title>Social Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+            --heading-font: "Raleway", sans-serif;
+            --nav-font: "Poppins", sans-serif;
+            
+            --background-color: #ffffff;
+            --default-color: #444444;
+            --heading-color: #124265;
+            --accent-color: #2487ce;
+            --surface-color: #ffffff;
+            --contrast-color: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: var(--default-font);
             margin: 0;
             padding: 0;
-            background-color: #E6F7FF; /* 淡天空藍背景 */
+            background-color: var(--background-color);
+            color: var(--default-color);
         }
 
         .header {
-            background-color: #80D0FF; /* 天空藍 */
-            color: white;
+            background-color: var(--accent-color);
+            color: white; /* 讓文字顏色為白色，增加可讀性 */
+            padding: 20px 0;
             text-align: center;
-            padding: 20px;
-            font-size: 24px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-family: var(--heading-font);
+            font-size: 30px;
+            margin: 0;
+            font-weight: 300;
+            color: white; /* 確保標題是白色 */
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid rgba(18, 66, 101, 0.2);
+            border-radius: 4px;
+            font-family: var(--default-font);
+            color: var(--default-color);
+            transition: 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--accent-color);
+            outline: none;
         }
 
         .container {
             display: flex;
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 30px;
         }
 
         .main {
             flex: 3;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
         }
 
         .sidebar {
             flex: 1;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .post-form {
-            margin-bottom: 20px;
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
 
         .post-form textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #B3E5FF;
-            border-radius: 5px;
+            padding: 15px;
+            border: 1px solid rgba(18, 66, 101, 0.2);
+            border-radius: 4px;
             resize: none;
-            font-size: 16px;
-        }
-
-        .post-form input {
-            display: block;
-            margin-top: 10px;
-            padding: 5px;
+            font-family: var(--default-font);
+            color: var(--default-color);
+            margin-bottom: 15px;
+            box-sizing: border-box;
         }
 
         .post-form button {
-            background-color: #80D0FF;
-            color: white;
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-family: var(--heading-font);
+            font-weight: 500;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
+            transition: 0.3s;
         }
 
         .post-form button:hover {
-            background-color: #4FB0E5;
+            background-color: rgba(36, 135, 206, 0.85);
         }
 
         .post {
-            background-color: #F0FAFF;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
 
         .post .author {
-            font-weight: bold;
-            color: #0077B6;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 15px;
         }
 
         .post .content {
-            margin-top: 10px;
-            font-size: 16px;
-            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .post img {
             max-width: 100%;
-            margin-top: 10px;
-            border-radius: 8px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .post-actions button {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: var(--nav-font);
+        }
+
+        .post-actions button:hover {
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+        }
+
+        .sidebar {
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+            height: fit-content;
         }
 
         .sidebar h3 {
-            margin-bottom: 10px;
-            color: #0077B6;
+            font-family: var(--heading-font);
+            color: var(--heading-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(36, 135, 206, 0.15);
         }
 
         .sidebar ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .sidebar ul li {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #F0FAFF;
-            border-radius: 5px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(36, 135, 206, 0.1);
+            color: var(--default-color);
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .search-bar {
-            margin-bottom: 20px;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #B3E5FF;
-            border-radius: 5px;
+        .sidebar ul li:hover {
+            color: var(--accent-color);
         }
 
         .actions {
-            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
         .actions button {
-            background-color: #80D0FF;
-            color: white;
+            flex: 1;
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
             border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: var(--nav-font);
             cursor: pointer;
-            font-size: 14px;
-            margin-right: 10px;
+            transition: 0.3s;
         }
 
         .actions button:hover {
-            background-color: #4FB0E5;
+            background-color: rgba(36, 135, 206, 0.85);
         }
-        #searchbar{
-            position: relative;
-            top:10px;
-            width: 300px;
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                margin-top: 30px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">Decentitle
+    <div class="header">
+        <h1>Decentitle</h1>
         <div class="search-bar">
-            <input type="text" id="searchbar" placeholder="Search...">
+            <input type="text" placeholder="Search...">
         </div>
     </div>
     
     <div class="container">
         <div class="main">
             <div class="post-form">
-                <textarea id="postContent" rows="4" placeholder="What's on your mind?"></textarea>
-                <input type="file" id="postImage">
+                <textarea rows="4" placeholder="What's on your mind?"></textarea>
+                <input type="file" id="postImage" accept="image/*">
                 <button onclick="addPost()">Post</button>
             </div>
+            
             <div id="posts">
                 <div class="post">
-                    <div class="author">Alice</div>
-                    <div class="content">Just enjoying the beautiful sky today!</div>
-                    <img src="https://via.placeholder.com/300x150" alt="Sky">
+                    <div class="author">Alice Johnson</div>
+                    <div class="content">Just finished reading an amazing book about space exploration. The possibilities are endless! 🚀</div>
                     <div class="post-actions">
-                        <button class="like-btn" onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
-                        <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+                        <button onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
+                        <button onclick="sharePost()">🔗 Share</button>
                     </div>
                 </div>
+
                 <div class="post">
-                    <div class="author">Bob</div>
-                    <div class="content">Had a great day with friends!</div>
-                    <img src="https://via.placeholder.com/300x150" alt="Friends">
+                    <div class="author">Bob Smith</div>
+                    <div class="content">Beautiful sunset at the beach today! Nature never fails to amaze me. 🌅</div>
                     <div class="post-actions">
-                        <button class="like-btn" onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
-                        <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+                        <button onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
+                        <button onclick="sharePost()">🔗 Share</button>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="sidebar">
             <div class="actions">
                 <button>Add Friend</button>
                 <button>Message</button>
                 <button>Notifications</button>
             </div>
+            
             <h3>Contacts</h3>
             <ul>
-                <li>Charlie</li>
-                <li>David</li>
-                <li>Eve</li>
-                <li>Grace</li>
+                <li>Charlie Brown</li>
+                <li>Diana Prince</li>
+                <li>Edward Blake</li>
+                <li>Fiona Chen</li>
+                <li>George Davis</li>
             </ul>
         </div>
     </div>
 
     <script>
         function addPost() {
-            const postContent = document.getElementById('postContent').value.trim();
-            const postImage = document.getElementById('postImage').files[0];
-    
-            if (postContent === '' && !postImage) {
-                alert('Please write something or select an image before posting!');
+            const textarea = document.querySelector('.post-form textarea');
+            const content = textarea.value.trim();
+            const imageInput = document.getElementById('postImage');
+            
+            if (!content && !imageInput.files.length) {
+                alert('Please write something or select an image to post.');
                 return;
             }
-    
-            const postsContainer = document.getElementById('posts');
-    
-            const postElement = document.createElement('div');
-            postElement.className = 'post';
-    
-            const authorElement = `<div class="author">User</div>`;
-            const contentElement = postContent ? `<div class="content">${postContent}</div>` : '';
-            const actionsElement = `
+
+            const post = document.createElement('div');
+            post.className = 'post';
+            
+            const imageHtml = imageInput.files.length 
+                ? '<img src="/api/placeholder/600/300" alt="Posted image">' 
+                : '';
+            
+            post.innerHTML = `
+                <div class="author">Current User</div>
+                <div class="content">${content}</div>
+                ${imageHtml}
                 <div class="post-actions">
-                    <button class="like-btn" onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
-                    <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+                    <button onclick="likePost(this)">👍 Like <span class="like-count">0</span></button>
+                    <button onclick="sharePost()">🔗 Share</button>
                 </div>
             `;
-    
-            let imageElement = '';
-            if (postImage) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    imageElement = `<img src="${e.target.result}" alt="Uploaded Image">`;
-                    postElement.innerHTML = authorElement + contentElement + imageElement + actionsElement;
-                    postsContainer.insertBefore(postElement, postsContainer.firstChild);
-                };
-                reader.readAsDataURL(postImage);
-            } else {
-                postElement.innerHTML = authorElement + contentElement + actionsElement;
-                postsContainer.insertBefore(postElement, postsContainer.firstChild);
-            }
-    
-            document.getElementById('postContent').value = '';
-            document.getElementById('postImage').value = '';
+
+            const postsContainer = document.getElementById('posts');
+            postsContainer.insertBefore(post, postsContainer.firstChild);
+            
+            textarea.value = '';
+            imageInput.value = '';
         }
-    
+
         function likePost(button) {
-            const likeCount = button.querySelector('.like-count');
-            likeCount.textContent = parseInt(likeCount.textContent) + 1;
+            const countSpan = button.querySelector('.like-count');
+            let count = parseInt(countSpan.textContent);
+            countSpan.textContent = count + 1;
         }
-    
+
         function sharePost() {
-            alert('Post shared!');
+            alert('Post shared successfully!');
         }
     </script>
 </body>
