@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recruiter Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#124265",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="items-center flex flex-col bg-main m-5 p-3">
+      <h1 class="text-white text-3xl p-7 font-bold">Decentitle</h1>
+      <div class="search-bar w-1/2 p-2">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="w-full p-2.5 rounded border-none"
+        />
+      </div>
+    </div>
+    <!-- context -->
+    <div class="flex justify-center h-auto">
+      <div class="flex flex-col bg-blue-300 w-4/5 rounded hover:bg-blue-500 transition duration-300 p-5 text-center">
+      <p>Current Rating: </p>
+      <span class="text-blue-800 font-bold text-4xl m-9">4.5</span>
+      </div>
+    </div>
+    <div class="flex justify-center h-auto m-3">
+      <div>
+      <p>
+        Your Applicants:
+      </p>
+    </div>
+    
+    </div>
+  </body>
+</html>
