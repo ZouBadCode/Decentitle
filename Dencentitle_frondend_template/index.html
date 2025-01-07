@@ -37,11 +37,12 @@
   <style>
     /* Dynamic text styles */
     .text-container {
-      position: relative;
-      height: 100px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
     }
 
     .original-text {
@@ -87,7 +88,7 @@
 
     .split .split-text.title {
       opacity: 1;
-      transform: translateX(calc(-50% + 250px));
+      transform: translateX(calc(-50% + 300px));
     }
   </style>
 </head>
