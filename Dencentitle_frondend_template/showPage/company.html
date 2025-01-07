@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Innovation Corp - Careers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+        /* 保留原有樣式 */
+        .header {
+            background-color: #124265;
+            position: relative;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .search-bar {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .company-info-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 30px;
+        }
+
+        .company-details {
+            flex: 2;
+        }
+
+        .company-name {
+            font-size: 2em;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            font-family: var(--heading-font);
+        }
+
+        .company-description {
+            color: var(--default-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .company-meta {
+            color: var(--default-color);
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .company-meta div {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-logo-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .company-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-upload-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            color: var(--accent-color);
+            transition: all 0.3s;
+        }
+
+        .logo-upload-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* 添加新的 toggle 相關樣式 */
+        .job-listing {
+            border: 1px solid rgba(36, 135, 206, 0.15);
+            border-radius: 4px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: var(--surface-color);
+        }
+
+        .job-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .job-content.active {
+            max-height: 2000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .job-title-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 10px 0;
+        }
+
+        .title-and-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toggle-indicator {
+            transition: transform 0.3s ease;
+            color: var(--accent-color);
+            font-size: 1.2em;
+        }
+
+        .toggle-indicator.active {
+            transform: rotate(180deg);
+        }
+
+        .job-header {
+            margin-bottom: 0;
+        }
+
+        .job-basic-info {
+            margin: 10px 0;
+        }
+
+        .job-apply-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h1 style="color: white;">Decentitle</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <!-- Company Profile -->
+        <section class="company-profile">
+            <div class="company-info-section">
+                <div class="company-details">
+                    <h1 class="company-name">Tech Innovation Corp</h1>
+                    <div class="company-meta">
+                        <div><i class="bi bi-geo-alt"></i> San Francisco, CA</div>
+                        <div><i class="bi bi-building"></i> Technology</div>
+                        <div><i class="bi bi-people"></i> 1000+ employees</div>
+                        <div><i class="bi bi-globe"></i> www.techinnovation.com</div>
+                    </div>
+                    <div class="company-description">
+                        Tech Innovation Corp is a leading technology company specializing in cutting-edge software solutions. We are dedicated to creating innovative products that transform how businesses operate in the digital age. Our team of passionate professionals works together to build tomorrow's technology today.
+                    </div>
+                </div>
+                <div class="company-logo-container">
+                    <div class="company-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Listings -->
+        <section>
+            <h2 style="margin-bottom: 20px;">Open Positions</h2>
+
+            <div class="job-listing">
+                <div class="job-title-section" onclick="toggleJob(this)">
+                    <div class="title-and-indicator">
+                        <h3 class="job-title">Senior Software Engineer</h3>
+                        <i class="bi bi-chevron-down toggle-indicator"></i>
+                    </div>
+                    <div class="job-basic-info">
+                        <div><i class="bi bi-geo-alt"></i> San Francisco, CA</div>
+                        <div><i class="bi bi-briefcase"></i> Full-time</div>
+                        <div><i class="bi bi-bar-chart"></i> Senior Level</div>
+                    </div>
+                </div>
+
+                <div class="job-content">
+                    <div class="job-section">
+                        <h4>About the Role</h4>
+                        <p>We are seeking an experienced Senior Software Engineer to join our dynamic team. In this role, you will be responsible for developing and maintaining high-performance applications while mentoring junior developers.</p>
+                    </div>
+
+                    <div class="job-section">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Design and implement scalable software solutions</li>
+                            <li>Lead technical design discussions and code reviews</li>
+                            <li>Collaborate with cross-functional teams to define and develop new features</li>
+                            <li>Mentor junior developers and contribute to team growth</li>
+                            <li>Participate in system architecture decisions</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-section">
+                        <h4>Requirements</h4>
+                        <ul>
+                            <li>7+ years of professional software development experience</li>
+                            <li>Strong proficiency in JavaScript, TypeScript, and React</li>
+                            <li>Experience with cloud services (AWS, Azure, or GCP)</li>
+                            <li>Excellent problem-solving and communication skills</li>
+                            <li>Bachelor's degree in Computer Science or related field</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-section">
+                        <h4>Benefits</h4>
+                        <ul>
+                            <li>Competitive salary and equity package</li>
+                            <li>Comprehensive health, dental, and vision insurance</li>
+                            <li>Flexible work arrangements</li>
+                            <li>Professional development budget</li>
+                            <li>Regular team events and activities</li>
+                        </ul>
+                    </div>
+
+                    <button class="job-apply-btn">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="job-listing">
+                <div class="job-title-section" onclick="toggleJob(this)">
+                    <div class="title-and-indicator">
+                        <h3 class="job-title">UI/UX Designer</h3>
+                        <i class="bi bi-chevron-down toggle-indicator"></i>
+                    </div>
+                    <div class="job-basic-info">
+                        <div><i class="bi bi-geo-alt"></i> Remote</div>
+                        <div><i class="bi bi-briefcase"></i> Full-time</div>
+                        <div><i class="bi bi-bar-chart"></i> Mid-Senior Level</div>
+                    </div>
+                </div>
+
+                <div class="job-content">
+                    <div class="job-section">
+                        <h4>About the Role</h4>
+                        <p>We're looking for a talented UI/UX Designer to help create beautiful, intuitive interfaces for our products...</p>
+                        <!-- Add other sections as needed -->
+                    </div>
+                    <button class="job-apply-btn">Apply Now</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleJob(titleSection) {
+            const content = titleSection.nextElementSibling;
+            const indicator = titleSection.querySelector('.toggle-indicator');
+            
+            content.classList.toggle('active');
+            indicator.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
