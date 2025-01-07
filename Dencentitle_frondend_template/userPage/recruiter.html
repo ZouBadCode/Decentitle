@@ -1,48 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Recruiter Dashboard</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              main: "#124265",
-            },
+
+<head>
+  <title>Recruiter Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            main: "#124265",
           },
         },
-      };
-    </script>
-  </head>
-  <body>
-    <!-- header -->
-    <div class="items-center flex flex-col bg-main m-5 p-3">
-      <h1 class="text-white text-3xl p-7 font-bold">Decentitle</h1>
-      <div class="search-bar w-1/2 p-2">
-        <input
-          type="text"
-          placeholder="Search..."
-          class="w-full p-2.5 rounded border-none"
-        />
-      </div>
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <!-- header -->
+  <div class="items-center flex flex-col bg-main m-5 p-3">
+    <h1 class="text-white text-3xl p-7 font-bold">Decentitle</h1>
+    <div class="search-bar w-1/2 p-2">
+      <input type="text" placeholder="Search..." class="w-full p-2.5 rounded border-none" />
     </div>
-    <!-- context -->
-    <div class="flex justify-center h-auto">
-      <div class="flex flex-col bg-blue-300 w-4/5 rounded hover:bg-blue-500 transition duration-300 p-5 text-center">
-      <p>Current Rating: </p>
+  </div>
+  <!-- context -->
+  <div class="flex justify-center h-auto">
+    <div class="flex flex-col bg-blue-300 w-4/5 rounded hover:bg-blue-500 transition duration-300 p-5 text-center">
+      <p>Current Rating:</p>
       <span class="text-blue-800 font-bold text-4xl m-9">4.5</span>
+    </div>
+  </div>
+  <div class="flex justify-center items-center  ">
+    <div class="flex justify-center w-2/3 m-3 bg-main p-5 rounded">
+      <div class="flex-1 text-white">
+        <p>Dashboard</p>
+        <div class="flex items-center m-2 flex-col">
+          <div class="bg-white text-main font-bold rounded-lg flex flex-col items-center justify-center w-4/5">
+            <div class="p-2 m-1 text-2xl">Credit</div>
+            <div class="p-2 m-1 text-4xl">3.1</div>
+            <button class="bg-blue-300 text-main font-bold rounded-lg p-2 my-2">Withdraw</button>
+          </div>
+          <div class="flex items-center p-5 w-full flex-col">
+            <div class="bg-white text-main font-bold rounded-lg flex flex-col items-center justify-center w-4/5">
+              <div class="p-1 m-1 text-2xl">
+                <p>Your Portfolio</p>
+              </div>
+              <div class="flex flex-row w-max-full justify-center items-center p-1 flex-wrap">
+                <p class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer whitespace-nowrap">
+                  Web3 Developer
+                </p>
+                <p class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer whitespace-nowrap">
+                  Web Developer
+                </p>
+                <p class="text-sm bg-yellow-400 rounded px-2 py-1 m-1 cursor-pointer whitespace-nowrap">
+                  Skill Matcher
+                </p>
+              </div>
+              <div class="m-1 text-black w-7/8 bg-slate-300 flex-grow flex p-2 mx-3 rounded-lg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 text-white">
+        <p>Your Member</p>
+        <div class="m-2 bg-white rounded-lg shadow-lg p-1">
+          <div class="flex flex-row items-center m-3 justify-center">
+            <div class="flex flex-row items-center">
+              <img src="../assets/img/team/team-1.jpg" alt="Image" class="rounded-lg w-10 h-10" />
+              <p class="mx-2 text-l text-black">Jone Doe</p>
+            </div>
+            <div class="flex flex-row items-center">
+              <p class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer">
+                Software Developer
+              </p>
+              <p class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer">
+                Web Developer
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex justify-center h-auto m-3">
-      <div>
-      <p>
-        Your Applicants:
-      </p>
-    </div>
-    
-    </div>
-  </body>
+</body>
+
 </html>
