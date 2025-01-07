@@ -18,10 +18,9 @@
     </script>
   </head>
   <body>
-
     <!-- header -->
     <div class="items-center flex flex-col bg-main m-5 p-3">
-      <h1 class="text-black-800 text-3xl p-7">Decentitle</h1>
+      <h1 class="text-white text-3xl p-7 font-bold">Decentitle</h1>
       <div class="search-bar w-1/2 p-2">
         <input
           type="text"
@@ -44,6 +43,7 @@
                   <input
                     type="checkbox"
                     class="absolute opacity-0 cursor-pointer h-0 w-0 peer"
+                    checked
                   />
                   <div
                     class="checkbox__checkmark absolute top-0.5 left-0 h-5 w-5 bg-gray-200 transition-colors duration-200 ease-in-out rounded peer-checked:bg-yellow-400 peer-hover:bg-gray-300 peer-checked:peer-hover:bg-yellow-400"
@@ -120,6 +120,7 @@
                     <input
                       type="checkbox"
                       class="absolute opacity-0 cursor-pointer h-0 w-0 peer"
+                      checked
                     />
                     <div
                       class="checkbox__checkmark absolute top-0.5 left-0 h-5 w-5 bg-gray-200 transition-colors duration-200 ease-in-out rounded peer-checked:bg-yellow-400 peer-hover:bg-gray-300 peer-checked:peer-hover:bg-yellow-400"
@@ -156,120 +157,225 @@
         <div class="flex-1 text-center">
           <div class="flex flex-col items-center">
             <div
-              class="flex flex-row w-4/5 bg-gray-100 rounded-lg shadow-lg mt-5"
+              class="flex flex-col w-full bg-gray-100 rounded-lg shadow-lg mt-5 p-5"
             >
-              <div class="m-2">
-                <img
-                  src="../assets/img/team/team-1.jpg"
-                  alt="Image"
-                  class="rounded-lg w-10 h-10"
-                />
-              </div>
-              <p class="mx-2 text-l flex items-center">Jone Doe</p>
-              <div class="flex flex-row items-center">
-                <p
-                  class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer flex items-center"
-                >
-                  Software Developer
-                </p>
-                <p
-                  class="text-sm bg-blue-300 rounded px-2 py-1 cursor-pointer flex items-center"
-                >
-                  Web Developer
-                </p>
-              </div>
-              <div class="flex mx-3 flex-row items-center">
-                <p
-                  class="text-sm bg-blue-300 rounded px-2 py-1 cursor-pointer flex items-center"
-                >
-                  Over 2 years Experience
-                </p>
-              </div>
-              <div class="flex mx-3 flex-row items-center">
-                <button class="bg-main text-white px-2 py-1 rounded-lg">
-                  View More
-                </button>
-                <button class="bg-blue-800 text-white px-2 py-1 m-1 rounded-lg">
-                  Invite
-                </button>
+              <div class="flex flex-row items-center justify-center">
+                <div class="mx-10">
+                  <div>
+                    <div class="flex flex-row items-center mb-3">
+                      <img
+                        src="../assets/img/team/team-1.jpg"
+                        alt="Image"
+                        class="rounded-lg w-10 h-10"
+                      />
+                      <p class="mx-2 text-l">Jone Doe</p>
+                    </div>
+                    <div class="flex flex-row items-center mb-3">
+                      <p
+                        class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Software Developer
+                      </p>
+                      <p
+                        class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Web Developer
+                      </p>
+                    </div>
+                    <div class="flex flex-row items-center mb-3">
+                      <p
+                        class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Over 2 years Experience
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- buttons -->
+                  <div class="flex flex-row items-center">
+                    <button class="bg-main text-white px-2 py-1 rounded-lg m-1">
+                      View Profile
+                    </button>
+                    <button
+                      class="bg-blue-800 text-white px-2 py-1 m-1 rounded-lg"
+                    >
+                      Invite
+                    </button>
+                  </div>
+                </div>
+                <!-- refer -->
+                <div class="mx-10">
+                  <div>
+                    <div class="flex flex-row items-center mb-3">
+                      <img
+                        src="../assets/img/logo.png"
+                        alt="Image"
+                        class="rounded-lg w-10 h-10"
+                      />
+                      <p class="mx-2 text-l">Becentitle</p>
+                    </div>
+                    <div class="bg-blue-300 rounded px-2 py-1">
+                      <p class="text-l">Referer Status</p>
+                        <p class="text-green-800">Excellent (1200)</p>
+                    </div>
+                    <!-- buttons -->
+                    <div class="flex flex-row items-center">
+                      <button
+                        class="bg-main text-white px-2 py-1 rounded-lg m-1"
+                      >
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              class="flex flex-row w-4/5 bg-gray-100 rounded-lg shadow-lg mt-5"
+              class="flex flex-col w-full bg-gray-100 rounded-lg shadow-lg mt-5 p-5"
             >
-              <div class="m-2">
-                <img
-                  src="../assets/img/team/team-1.jpg"
-                  alt="Image"
-                  class="rounded-lg w-10 h-10"
-                />
-              </div>
-              <p class="mx-2 text-l flex items-center">Jone Doe</p>
-              <div class="flex flex-row items-center">
-                <p
-                  class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer flex items-center"
-                >
-                  Software Developer
-                </p>
-                <p
-                  class="text-sm bg-blue-300 rounded px-2 py-1 cursor-pointer flex items-center"
-                >
-                  Web Developer
-                </p>
-              </div>
-              <div class="flex mx-3 flex-row items-center">
-                <p
-                  class="text-sm bg-blue-300 rounded px-2 py-1 cursor-pointer flex items-center"
-                >
-                  Over 2 years Experience
-                </p>
-              </div>
-              <div class="flex mx-3 flex-row items-center">
-                <button class="bg-main text-white px-2 py-1 rounded-lg">
-                  View More
-                </button>
-                <button class="bg-blue-800 text-white px-2 py-1 m-1 rounded-lg">
-                  Invite
-                </button>
+              <div class="flex flex-row items-center justify-center">
+                <div class="mx-10">
+                  <div>
+                    <div class="flex flex-row items-center mb-3">
+                      <img
+                        src="../assets/img/team/team-1.jpg"
+                        alt="Image"
+                        class="rounded-lg w-10 h-10"
+                      />
+                      <p class="mx-2 text-l">Jone Doe</p>
+                    </div>
+                    <div class="flex flex-row items-center mb-3">
+                      <p
+                        class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Software Developer
+                      </p>
+                      <p
+                        class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Web Developer
+                      </p>
+                    </div>
+                    <div class="flex flex-row items-center mb-3">
+                      <p
+                        class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Over 2 years Experience
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- buttons -->
+                  <div class="flex flex-row items-center">
+                    <button class="bg-main text-white px-2 py-1 rounded-lg m-1">
+                      View Profile
+                    </button>
+                    <button
+                      class="bg-blue-800 text-white px-2 py-1 m-1 rounded-lg"
+                    >
+                      Invite
+                    </button>
+                  </div>
+                </div>
+                <!-- refer -->
+                <div class="mx-10">
+                  <div>
+                    <div class="flex flex-row items-center mb-3">
+                      <img
+                        src="../assets/img/logo.png"
+                        alt="Image"
+                        class="rounded-lg w-10 h-10"
+                      />
+                      <p class="mx-2 text-l">Becentitle</p>
+                    </div>
+                    <div class="bg-blue-300 rounded px-2 py-1">
+                      <p class="text-l">Referer Status</p>
+                        <p class="text-yellow-800">Medium (800)</p>
+                    </div>
+                    <!-- buttons -->
+                    <div class="flex flex-row items-center">
+                      <button
+                        class="bg-main text-white px-2 py-1 rounded-lg m-1"
+                      >
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              class="flex flex-row w-4/5 bg-gray-100 rounded-lg shadow-lg mt-5"
+              class="flex flex-col w-full bg-gray-100 rounded-lg shadow-lg mt-5 p-5"
             >
-              <div class="m-2">
-                <img
-                  src="../assets/img/team/team-1.jpg"
-                  alt="Image"
-                  class="rounded-lg w-10 h-10"
-                />
-              </div>
-              <p class="mx-2 text-l flex items-center">Jone Doe</p>
-              <div class="flex flex-row items-center">
-                <p
-                  class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer flex items-center"
-                >
-                  Software Developer
-                </p>
-                <p
-                  class="text-sm bg-blue-300 rounded px-2 py-1 cursor-pointer flex items-center"
-                >
-                  Web Developer
-                </p>
-              </div>
-              <div class="flex mx-3 flex-row items-center">
-                <p
-                  class="text-sm bg-blue-300 rounded px-2 py-1 cursor-pointer flex items-center"
-                >
-                  Over 2 years Experience
-                </p>
-              </div>
-              <div class="flex mx-3 flex-row items-center">
-                <button class="bg-main text-white px-2 py-1 rounded-lg">
-                  View More
-                </button>
-                <button class="bg-blue-800 text-white px-2 py-1 m-1 rounded-lg">
-                  Invite
-                </button>
+              <div class="flex flex-row items-center justify-center">
+                <div class="mx-10">
+                  <div>
+                    <div class="flex flex-row items-center mb-3">
+                      <img
+                        src="../assets/img/team/team-1.jpg"
+                        alt="Image"
+                        class="rounded-lg w-10 h-10"
+                      />
+                      <p class="mx-2 text-l">Jone Doe</p>
+                    </div>
+                    <div class="flex flex-row items-center mb-3">
+                      <p
+                        class="text-sm bg-blue-400 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Software Developer
+                      </p>
+                      <p
+                        class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Web Developer
+                      </p>
+                    </div>
+                    <div class="flex flex-row items-center mb-3">
+                      <p
+                        class="text-sm bg-blue-300 rounded px-2 py-1 m-1 cursor-pointer"
+                      >
+                        Over 2 years Experience
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- buttons -->
+                  <div class="flex flex-row items-center">
+                    <button class="bg-main text-white px-2 py-1 rounded-lg m-1">
+                      View Profile
+                    </button>
+                    <button
+                      class="bg-blue-800 text-white px-2 py-1 m-1 rounded-lg"
+                    >
+                      Invite
+                    </button>
+                  </div>
+                </div>
+                <!-- refer -->
+                <div class="mx-10">
+                  <div>
+                    <div class="flex flex-row items-center mb-3">
+                      <img
+                        src="../assets/img/logo.png"
+                        alt="Image"
+                        class="rounded-lg w-10 h-10"
+                      />
+                      <p class="mx-2 text-l">Becentitle</p>
+                    </div>
+                    <div class="bg-blue-300 rounded px-2 py-1">
+                      <p class="text-l">Referer Status</p>
+                        <p class="text-red-800">Poor (400)</p>
+                    </div>
+                    <!-- buttons -->
+                    <div class="flex flex-row items-center">
+                      <button
+                        class="bg-main text-white px-2 py-1 rounded-lg m-1"
+                      >
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
