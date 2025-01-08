@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Whitebook Research Lab - Certifications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #124265;
+            position: relative;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .search-bar {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .company-info-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 30px;
+        }
+
+        .company-details {
+            flex: 2;
+        }
+
+        .company-name {
+            font-size: 2em;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            font-family: var(--heading-font);
+        }
+
+        .company-description {
+            color: var(--default-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .company-meta {
+            color: var(--default-color);
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .company-meta div {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-logo-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .company-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .job-posting {
+            border: 1px solid rgba(36, 135, 206, 0.15);
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: var(--background-color);
+        }
+
+        .job-posting h3 {
+            margin: 0 0 10px 0;
+            color: var(--heading-color);
+        }
+
+        .job-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .certificate-content {
+            background-color: rgba(36, 135, 206, 0.05);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .certificate-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .certificate-content ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .certificate-content ul li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 8px;
+        }
+
+        .apply-button {
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: var(--heading-font);
+            font-weight: 500;
+            font-size: 1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .apply-button:hover {
+            background-color: #124265;
+        }
+
+        @media (max-width: 768px) {
+            .company-info-section {
+                flex-direction: column;
+            }
+            
+            .company-logo-container {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h1 style="color: white;">Decentitle</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Institute Profile -->
+    <section class="company-profile">
+        <div class="company-info-section">
+            <div class="company-details">
+                <h1 class="company-name">Solana Whitebook Research Lab</h1>
+                <div class="company-meta">
+                    <div><i class="bi bi-globe"></i> Global - Remote First</div>
+                    <div><i class="bi bi-building"></i> Blockchain Research & Education</div>
+                    <div><i class="bi bi-award"></i> Official Solana Ecosystem Partner</div>
+                </div>
+                <div class="company-description">
+                    Solana Whitebook Research Lab is a pioneering research institution dedicated to advancing Solana blockchain technology education and certification. Our lab focuses on developing comprehensive educational materials and certification programs for Solana developers, from beginners to experts. We work closely with the Solana ecosystem to ensure our certifications meet industry standards.
+                </div>
+            </div>
+            <div class="company-logo-container">
+                <div class="company-logo">
+                    <img src="/api/placeholder/200/200" alt="Solana Whitebook Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <!-- Certificates Section -->
+        <section class="company-profile">
+            <div class="section-header">
+                <h2>Available Certificates</h2>
+            </div>
+
+            <!-- Newbie Certificate -->
+            <div class="job-posting">
+                <h3>Solana Whitebook Newbee</h3>
+                <div class="certificate-content">
+                    <p>Entry-level certification for Solana blockchain developers. This certification validates fundamental understanding of:</p>
+                    <ul>
+                        <li>Solana blockchain architecture and network topology</li>
+                        <li>Basic smart contract development using Rust</li>
+                        <li>Solana programming model and account structure</li>
+                        <li>Development environment setup and tools</li>
+                        <li>Security fundamentals and best practices</li>
+                    </ul>
+                    <p><strong>Requirements:</strong></p>
+                    <ul>
+                        <li>Basic understanding of blockchain technology</li>
+                        <li>Familiarity with programming concepts</li>
+                        <li>Completion of beginner-level test</li>
+                    </ul>
+                </div>
+                <div style="text-align: center;">
+                    <button class="apply-button">
+                        <i class="bi bi-award"></i>
+                        Apply for Certification
+                    </button>
+                </div>
+            </div>
+
+            <!-- Expert Certificate -->
+            <div class="job-posting">
+                <h3>Solana Whitebook Expert</h3>
+                <div class="certificate-content">
+                    <p>Advanced certification for experienced Solana developers. This certification validates expertise in:</p>
+                    <ul>
+                        <li>Advanced Solana program development and optimization</li>
+                        <li>Complex smart contract architectures and patterns</li>
+                        <li>Performance optimization and system design</li>
+                        <li>Advanced security implementation and auditing</li>
+                        <li>Cross-program invocation and composability</li>
+                    </ul>
+                    <p><strong>Requirements:</strong></p>
+                    <ul>
+                        <li>Minimum 1 year of Solana development experience</li>
+                        <li>Completion of Newbee certification</li>
+                        <li>Demonstrated project experience</li>
+                        <li>Advanced technical assessment completion</li>
+                    </ul>
+                </div>
+                <div style="text-align: center;">
+                    <button class="apply-button">
+                        <i class="bi bi-award"></i>
+                        Apply for Certification
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
