@@ -1,5 +1,5 @@
 <script setup>
-import HeroCard from '@/components/heroCard.vue';
+import HeroCard from '@/components/heroCards.vue';
 import NavBar from '@/components/NavBar.vue';
 </script>
 <template>

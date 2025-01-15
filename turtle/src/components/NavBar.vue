@@ -2,12 +2,12 @@
 
 </script>
 <template>
-    <nav class="flex justify-center flex-row top-0 left-0 right-0 bg-gray-800 text-white py-4">
+    <nav class="flex justify-center flex-row top-0 left-0 right-0 bg-gray-800 text-white py-4 max-w-screen">
         <a href="/" class="flex flex-row items-center mr-auto"> 
             <img src="./icons/DTlgo.png" alt="logo" class="w-12 h-12 px-1" />
             DECENTITLE
         </a>
-        <ul class="navbar-list flex flex-row space-x-4 w-full justify-center items-center">
+        <ul class="navbar-list flex-row space-x-4 w-full justify-center items-center hidden md:flex">
             <li class="navbar-item"><a href="#home">Home</a></li>
             <li class="navbar-item"><a href="#about">About</a></li>
             <li class="navbar-item"><a href="#services">Services</a></li>
