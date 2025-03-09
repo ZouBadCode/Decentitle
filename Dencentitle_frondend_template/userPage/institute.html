@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute Profile - Decentitle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #124265;
+            position: relative;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .search-bar {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .company-info-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 30px;
+        }
+
+        .company-details {
+            flex: 2;
+        }
+
+        .company-name {
+            font-size: 2em;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            font-family: var(--heading-font);
+        }
+
+        .company-description {
+            color: var(--default-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .company-meta {
+            color: var(--default-color);
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .company-meta div {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-logo-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .company-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-upload-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            color: var(--accent-color);
+            transition: all 0.3s;
+        }
+
+        .logo-upload-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .icon-button {
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 1.2em;
+            background: none;
+            border: none;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .icon-button:hover {
+            color: rgba(36, 135, 206, 0.85);
+        }
+
+        .job-posting {
+            border: 1px solid rgba(36, 135, 206, 0.15);
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: var(--background-color);
+        }
+
+        .job-posting h3 {
+            margin: 0 0 10px 0;
+            color: var(--heading-color);
+        }
+
+        .job-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .toggle-list {
+            margin-top: 10px;
+            border-top: 1px solid rgba(36, 135, 206, 0.15);
+            padding-top: 10px;
+        }
+
+        .toggle-button {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .toggle-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .toggle-content.active {
+            display: block;
+        }
+
+        .applicant-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid rgba(36, 135, 206, 0.1);
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        .status-selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h1 style="color: white;">Decentitle</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+            </div>
+        </div>
+    </div>
+    <!-- Company Profile -->
+    <section class="company-profile">
+        <div class="company-info-section">
+            <!-- 左側公司信息 -->
+            <div class="company-details">
+                <h1 class="company-name">Solana Whitebook Research Lab</h1>
+                <div class="company-meta">
+                    <div><i class="bi bi-globe"></i> Global - Remote First</div>
+                    <div><i class="bi bi-building"></i> Blockchain Research & Education</div>
+                    <div><i class="bi bi-award"></i> Official Solana Ecosystem Partner</div>
+                </div>
+                <div class="company-description">
+                    Solana Whitebook Research Lab is a pioneering research institution dedicated to advancing Solana blockchain technology education and certification. Our lab focuses on developing comprehensive educational materials and certification programs for Solana developers, from beginners to experts. We work closely with the Solana ecosystem to ensure our certifications meet industry standards.
+                </div>
+            </div>
+            <!-- 右側公司logo -->
+            <div class="company-logo-container">
+                <div class="company-logo">
+                    <button class="logo-upload-btn" title="Upload new logo">
+                        <i class="bi bi-camera"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <!-- Job Openings -->
+        <section class="company-profile">
+            <div class="section-header">
+                <h2>Certificate</h2>
+                <button class="icon-button" title="Add new job posting">
+                    <i class="bi bi-plus-lg"></i>
+                </button>
+            </div>
+
+            <!-- Individual Job Posting -->
+            <div class="job-posting">
+                <h3>Solana Whitebook Newbee</h3>
+                <div class="job-description">
+                    Entry-level certification for Solana blockchain developers. This certification validates fundamental understanding of:
+                    <ul>
+                        <li>Solana blockchain architecture</li>
+                        <li>Basic smart contract development</li>
+                        <li>Solana programming model</li>
+                        <li>Essential development tools</li>
+                        <li>Basic security practices</li>
+                    </ul>
+                    Perfect for developers starting their journey in Solana development.
+                </div>
+
+                
+                <!-- Applicants Toggle -->
+                <div class="toggle-list">
+                    <button class="toggle-button" onclick="toggleList(this, 'applicants')">
+                        <i class="bi bi-chevron-right"></i>
+                        Certificate Verified Appliance (2)
+                    </button>
+                    <div class="toggle-content" id="applicants">
+                        <div class="applicant-item">
+                            <span>Alex Blockchain</span>
+                            <div class="status-badge status-pending">Pending</div>
+                        </div>
+                        <div class="applicant-item">
+                            <span>Sarah Web3</span>
+                            <div class="status-badge status-selected">Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issue Certificate Toggle -->
+                <div class="toggle-list">
+                    <button class="toggle-button" onclick="toggleList(this, 'issue-cert')">
+                        <i class="bi bi-chevron-right"></i>
+                        Issuance of Certificates
+                    </button>
+                    <div class="toggle-content" id="issue-cert">
+                        <div class="applicant-item" style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+                                <input type="text" 
+                                       placeholder="Enter wallet address" 
+                                       style="flex: 1; padding: 8px; border: 1px solid rgba(36, 135, 206, 0.15); border-radius: 4px;">
+                                <button style="background-color:  #124265; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">
+                                    Issue
+                                </button>
+                            </div>
+                            <!-- 可選：添加一個狀態顯示 -->
+                            <div style="font-size: 0.9em; color: var(--default-color);">
+                                * Enter the recipient's wallet address to issue the certificate
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another Job Posting -->
+            <div class="job-posting">
+                <h3>Solana Whitebook Expert</h3>
+                <div class="job-description">
+                    Entry-level certification for Solana blockchain developers. This certification validates fundamental understanding of:
+                    <ul>
+                        <li>Solana blockchain architecture</li>
+                        <li>Basic smart contract development</li>
+                        <li>Solana programming model</li>
+                        <li>Essential development tools</li>
+                        <li>Basic security practices</li>
+                    </ul>
+                    Perfect for developers starting their journey in Solana development.
+                </div>
+                
+                
+                <div class="toggle-list">
+                    <button class="toggle-button" onclick="toggleList(this, 'applicants2')">
+                        <i class="bi bi-chevron-right"></i>
+                        Certificate Verified Appliance (3)
+                    </button>
+                    <div class="toggle-content" id="applicants2">
+                        <!-- Applicant items -->
+                    </div>
+                </div>
+
+                <div class="toggle-list">
+                    <button class="toggle-button" onclick="toggleList(this, 'issue-cert2')">
+                        <i class="bi bi-chevron-right"></i>
+                        Issuance of Certificates
+                    </button>
+                    <div class="toggle-content" id="issue-cert2">
+                        <div class="applicant-item" style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+                                <input type="text" 
+                                       placeholder="Enter wallet address" 
+                                       style="flex: 1; padding: 8px; border: 1px solid rgba(36, 135, 206, 0.15); border-radius: 4px;">
+                                <button style="background-color:  #124265; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">
+                                    Issue
+                                </button>
+                            </div>
+                            <!-- 可選：添加一個狀態顯示 -->
+                            <div style="font-size: 0.9em; color: var(--default-color);">
+                                * Enter the recipient's wallet address to issue the certificate
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleList(button, id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('active');
+            
+            const icon = button.querySelector('i');
+            if (content.classList.contains('active')) {
+                icon.classList.replace('bi-chevron-right', 'bi-chevron-down');
+            } else {
+                icon.classList.replace('bi-chevron-down', 'bi-chevron-right');
+            }
+        }
+    </script>
+</body>
+</html>
